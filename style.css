@@ -1,0 +1,309 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+:root {
+  --text--color: green;
+}
+a{
+  font-size: 1.6rem;
+}
+h1 {
+  color: var(--text--color);
+  font-size:4rem;
+}
+h3{
+  color: rgb(30, 0, 255);
+  font-family: 'Hachi Maru Pop', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  text-shadow: 5px 6px 2px rgba(54, 255, 47, 0.74);
+}
+.box {
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background-color: turquoise;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 10px dashed black;
+  background-clip: border-box;
+
+  /* background-image: url(https://images.goodsmile.info/cgm/images/product/20210406/11030/83249/large/fa1feb04ea10ef8d10fd8cba2f90ad00.jpg),
+    url(https://ecdn.game4v.com/g4v-content/uploads/2020/10/Game4v-oregairu-yukino-hachiman-1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat; */
+
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 0, 0.7),
+      rgba(0, 0, 255, 0.7)
+    ),
+    url(https://ecdn.game4v.com/g4v-content/uploads/2020/10/Game4v-oregairu-yukino-hachiman-1.jpg);
+
+  background-size: 200px;
+  /* background-size: contain; */
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+
+  background-position: top 20px right 20px;
+}
+
+.box-test {
+  background-color: tomato;
+  height: 100px;
+  text-transform: uppercase;
+  display: flex;
+}
+.h3-center {
+  margin: auto;
+  position: relative;
+}
+
+.h3-center::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  border-left: 3px solid #333;
+  height: 50px;
+
+  top: 50%;
+  /* left: 50%; */
+  transform: translateY(-50%);
+}
+
+
+.boxed{
+  text-align: center; 
+}
+.boxed p {
+  font-size: 2rem;
+  display: inline-block;
+  max-width: 60rem;
+  text-align: justify;
+  line-height: 2rem;
+  letter-spacing: 2px;
+
+  /* white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+.gradient-background{
+  width: 40rem;
+  height: 20rem;
+  background-image: linear-gradient(to right bottom, red 30%, green 70%);
+  margin: 2rem auto;
+  box-shadow: 15px 15px 20px 0px yellowgreen;
+  /* box-shadow: x y blur spread color; */
+
+}
+.title{
+  text-align: center;
+  color: aqua;
+
+  font-size: 30px;
+  font-style: italic;
+  text-decoration: solid;
+  text-transform: uppercase;
+  text-shadow: 0px 10px 10px rgba(255, 0, 0, 0.838);
+}
+
+@supports (-webkit-background-clip: text){
+  .title{
+    background-image: linear-gradient(to right, rgba(128, 0, 26, 0.9)30%,
+    rgba(0, 255, 229, 0.758)70%);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+  }
+}
+
+
+.img--background{
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5), rgba(0, 128, 0, 0.5) ),url(https://images.unsplash.com/photo-1669172460356-1080d53199e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60) no-repeat center;
+  background-size: contain;
+
+  width: 100vw;
+  height: 100vh;
+}
+.warper-avatar__list{
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.list-avatar{
+  display: flex;
+  justify-items: center;
+  /* justify-content: space-around; */
+}
+.list-avatar .avatar{
+ width: 80px;
+ height: 80px;
+ border: 2px solid rgba(255, 0, 0, 0.849);
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+.list-avatar .avatar:not(:first-child){
+  margin-left: -20px;
+  box-shadow: 0 0 0 3px white;
+}
+.list-avatar .avatar:hover{
+  opacity: 0.7;
+}
+.list-avatar .many-avatar{
+  box-sizing: content-box;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+/* --------------------------- POSITION ----------------------------*/
+
+.position__wraper{
+  margin: 6rem auto;
+  width: 80vw;
+  height: 900px;
+  /* background-color: rgb(236, 189, 22); */
+  border: 2px solid gold;
+}
+.position__wraper .dropdown{
+  width: 400px;
+  height: 80px;
+  background-color: aqua;
+  border-radius: 5px;
+  /* Can giua voi Inline */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
+.position__wraper .dropdown span{
+  font-size:20px;
+}
+.position__wraper .dropdown i{
+  font-size: 25px;
+  text-align: center;
+}
+.position__wraper .dropdown .dropdown_select,
+.dropdown .dropdown_select .selected__item,.dropdown .dropdown__list .dropdown__item{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.dropdown .dropdown_select .selected__item{
+  flex-grow: 1;
+}
+/* .dropdown_select .selected__item i{
+  margin-right: 5px;
+} */
+.dropdown .dropdown__list{
+  width: 100%;
+  height: 8rem;
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  margin-top: 10.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: all .5s ease;
+  opacity: 0; 
+  visibility: hidden; 
+}
+.dropdown:hover .dropdown__list{
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown .dropdown__list::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.5rem;
+  background-color: transparent;
+  z-index: 2;
+  left: 0;
+  top: -2.5rem;
+}
+.dropdown .dropdown__list .dropdown__item{
+  list-style: none;
+  background-color: aqua;
+  transition: background-color .2s linear;
+  position: relative;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.dropdown .dropdown__list .dropdown__item:hover{
+  background-color: rgb(0, 255, 26);
+}
+
+.dropdown .dropdown__list .dropdown__item:first-child::before{
+  content: '';
+  position: absolute;
+  /* border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid aqua; */
+  width: 32px;
+  height: 32px;
+  /* background-color: aqua; */
+  border: 1px solid black;
+  top: -15px;
+  left: 20px;
+  transform: rotate(45deg);
+  z-index: -1;
+  transition: background-color .2s linear;
+
+}
+
+.dropdown .dropdown__list .dropdown__item:first-child::after{
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: aqua;
+  top: -14px;
+  left: 21px;
+  transform: rotate(45deg);
+  z-index: 1;
+  transition: background-color .2s linear;
+}
+.dropdown .dropdown__list .dropdown__item:first-child:hover::after{
+  background-color:rgb(0, 255, 26);
+}
+.dropdown .dropdown__list .dropdown__item:first-child{
+  border-radius: 5px 5px 0 0;
+}
+.dropdown .dropdown__list .dropdown__item:last-child{
+  border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid black;
+}
+

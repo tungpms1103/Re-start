@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Re-learning Basic</h1>
+    <style>
+        .box {
+            width: calc(30% + 20px);
+            height: 120px;
+            background-color: rgba(54, 34, 143, 0.642)
+        }
+
+        .box::after {
+            content: attr(data-title);
+        }
+
+        a::after {
+            content: "(" attr(href)")";
+        }
+    </style>
+
+    <!-- <div class="header"></div> -->
+
+    <div class="box-test">
+        <h3 class="h3-center">Center Item</h3>
+    </div>
+
+    <div class="box" data-title="đây là box màu xanh" title="màu xanh nhé"></div>
+    <a href="https://fullstack.edu.vn/learning/html-css?id=2160">học attr</a>
+
+
+    <h2>Text - Font</h2>
+
+    <div class="boxed">
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo veniam asperiores aut error
+            repellendus voluptas vero, eos quo iste excepturi est sed quam itaque voluptatem distinctio eum ipsam nisi
+            atque!</p>
+    </div>
+
+    <div class="gradient-background">
+    </div>
+
+    <h3 class="title">Demo title gradient</h3>
+
+    <div class="img--background"></div>
+
+    <div class="warper-avatar__list">
+        <div class="list-avatar">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                alt="" class="avatar">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80"
+                alt="" class="avatar">
+            <img src="https://images.unsplash.com/photo-1628890920690-9e29d0019b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                alt="" class="avatar">
+            <img src="https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80"
+                alt="" class="avatar">
+
+            <div class="avatar many-avatar">
+                <p>+24</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>position in css</h3>
+
+    <div class="position__wraper">
+        <div class="dropdown">
+            <div class="dropdown_select">
+                <div class="selected__item">
+                    <span>HTML/css</span>
+                    <!-- <i class="fab fa-html5"></i> -->
+                </div>
+                <i class="fas fa-chevron-circle-down"></i>
+            </div>
+            <ul class="dropdown__list">
+                <li class="dropdown__item"><span>JavaScript</span>
+                    <i class="fab fa-js"></i>
+                </li>
+                <li class="dropdown__item"><span>ReactJS</span>
+                    <i class="fab fa-react"></i>
+                </li>
+                <li class="dropdown__item"><span>PHP</span>
+                    <i class="fab fa-php"></i>
+                </li>
+                <li class="dropdown__item"><span>Android</span>
+                    <i class="fab fa-android"></i>
+                </li>
+                <li class="dropdown__item"><span>Mobile</span>
+                    <i class="fas fa-mobile"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
