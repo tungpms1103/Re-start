@@ -1,0 +1,61 @@
+/* 
+1. child selector
+2. CSS Selector - Combinators
+*/
+
+/* ----------    ---------- */
+
+/* ------- 1. Child selector -------- */
+.child-selector{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+}
+.child-selector ul{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+.child-selector p{
+    text-align: center;
+    font-size: 3.2rem;
+    text-decoration: solid;
+}
+.child-selector ul li:first-child:hover{
+    /*!!! Nó sẽ luôn lấy phần tử đầu tiên trong thẻ cha mặc định là First child */
+    color: black;
+}
+.child-selector ul li:last-child:hover{
+    color: pink;
+}
+.child-selector ul li:nth-child(2):hover{
+    color: green;
+}
+.child-selector ul li:nth-last-child(2):hover{
+    color: rgb(24, 216, 200);
+}
+.child-selector ul li:nth-child(odd){
+    color: rgb(173, 11, 121);
+}
+.child-selector ul li:nth-child(3n - 1){
+    color: rgb(24, 18, 196);
+}
+
+/* ---------- 2. CSS Selector and combinator    ---------- */
+
+/* 
+
+link: https://www.youtube.com/watch?v=-jXg-PK6BIk&list=WL&index=2
+
+-  VD .class1 + .class2 => CSS cho class 1 và class 2 phải nằm liền kề ngay sau nó
+-    Thay bằng dấu ~  => nằm cùng cấp là được 
+-    dấu >  => con trực tiếp của class1
+-   first-of-type: tương tự như first-child nhưng nó sẽ chia theo kiểu VD: thẻ p đầu tiên, thẻ li cuối cùng ==> dùng trong trường hợp nhiều phần tử mix với nhau trong 1 thẻ cha.
+- ^="abc" :bắt đầu bằng abc
+- *="abc": có chứa
+- $="abc" : kết thúc.... 
+*/
