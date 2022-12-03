@@ -1,0 +1,80 @@
+/* ------- w-shop1 -------*/
+.wrap_wshop1{
+    width: 100vw;
+    height: 60rem;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.137), rgba(0, 128, 0, 0.238));
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.wrap_wshop1 h3{
+    color: transparent;
+    background-image: linear-gradient(to right, yellowgreen, green);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-shadow: 8px 5px 10px rgba(212, 255, 0, 0.89);
+    font-weight: 700;
+
+    padding-bottom: 10rem;
+}
+.wrap_wshop1 .list_button{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.wrap_wshop1 .list_button .button{
+    min-width: 30%;
+    height: 10rem;
+    background-color: rgb(220, 239, 239);
+    margin: calc((10%/8));
+    border: 2px solid black;
+    border-radius: 30px;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.list_button .button:hover{
+    background-image: linear-gradient(to right bottom, rgba(16, 156, 216, 0.66), rgba(40, 217, 40, 0.701));
+}
+.list_button .button p{
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 2.4rem;
+}
+
+.list_button .button p::first-letter{
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    background-image: linear-gradient(to right bottom, rgba(216, 16, 49, 0.826), rgb(4, 58, 4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/*  ---------- W-shop 2 ------------ */
+.workshop2_text--gradient{
+    font-size: 30rem;
+    text-align: center;
+    text-decoration: solid;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    color: transparent;
+    background-image: linear-gradient(to left, rgba(255, 192, 203, 0.995),rgba(255, 166, 0, 0.973));
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    
+}

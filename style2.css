@@ -1,6 +1,7 @@
 /* 
 1. child selector
 2. CSS Selector - Combinators
+3. Transition
 */
 
 /* ----------    ---------- */
@@ -45,6 +46,8 @@
     color: rgb(24, 18, 196);
 }
 
+
+
 /* ---------- 2. CSS Selector and combinator    ---------- */
 
 /* 
@@ -59,3 +62,8 @@ link: https://www.youtube.com/watch?v=-jXg-PK6BIk&list=WL&index=2
 - *="abc": có chứa
 - $="abc" : kết thúc.... 
 */
+
+
+/* ---------- 3. Transition  ---------- */
+
+/* transition: property timer easing(easer,liner,...) */

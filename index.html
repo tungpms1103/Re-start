@@ -31,7 +31,7 @@
             content: attr(data-title);
         }
 
-        a::after {
+        .attr_arch a::after {
             content: "(" attr(href)")";
         }
     </style>
@@ -43,7 +43,9 @@
     </div>
 
     <div class="box" data-title="đây là box màu xanh" title="màu xanh nhé"></div>
-    <a href="https://fullstack.edu.vn/learning/html-css?id=2160">học attr</a>
+    <div class="attr_arch">
+        <a href="https://fullstack.edu.vn/learning/html-css?id=2160">học attr</a>
+    </div>
 
 
     <h2>Text - Font</h2>
@@ -60,7 +62,22 @@
 
     <h3 class="title">Demo title gradient</h3>
 
-    <div class="img--background"></div>
+    <div class="img--background">
+        <h3>practice</h3>
+        <div class="nav_bar">
+            <div class="title_practice">
+                <p>Practices</p>
+            </div>
+            <ul class="practice__list">
+                <li><a href="./practice/practice1.html" class="link_practice" target="_blank">Practice 1</a></li>
+                <li><a href="" class="link_practice">Practice</a></li>
+                <li><a href="" class="link_practice">Practice</a></li>
+                <li><a href="" class="link_practice">Practice</a></li>
+                <li><a href="" class="link_practice">Practice</a></li>
+            </ul>
+        </div>
+
+    </div>
 
     <!-- Avatar list -->
     <div class="warper-avatar__list">

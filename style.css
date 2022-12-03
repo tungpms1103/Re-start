@@ -136,14 +136,109 @@ h3{
   }
 }
 
-
+/* -------- Navbar practice --------- */
 .img--background{
   background: linear-gradient(to right,rgba(255, 0, 0, 0.5), rgba(0, 128, 0, 0.5) ),url(https://images.unsplash.com/photo-1669172460356-1080d53199e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60) no-repeat center;
   background-size: contain;
 
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
+
+.img--background .nav_bar{
+  width: 20rem;
+  height: 6rem;
+  background-color: red;
+  position: absolute;
+  top: 5rem;
+  left: 4rem;
+
+  border-radius: 10px;
+}
+.nav_bar .title_practice{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+}
+.nav_bar .title_practice p{
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 2rem;
+  text-shadow: 3px 4px 4px black;
+}
+
+.nav_bar .practice__list{
+  box-sizing: border-box;
+  margin: 0;
+  background-color: rgba(138, 192, 192, 0.922);
+  width: 52rem;
+  min-height: 40rem;
+  padding: 3rem;
+  border: 1 solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 0;
+  left: 25rem;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease;
+}
+.nav_bar .practice__list::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25rem;
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+}
+.nav_bar .practice__list li{
+  list-style: none;
+  padding: .5rem;
+}
+.nav_bar .practice__list li a{
+  font-size: 2rem;
+}
+.practice__list li:nth-of-type(even) a{
+  color: rgb(2, 18, 3);
+}
+.practice__list li:nth-of-type(odd) a{
+  color: rgb(162, 18, 18);
+}
+.practice__list li:hover a{
+  opacity: .8;
+}
+.practice__list li:active a{
+  opacity: .3;
+}
+
+
+
+.img--background .nav_bar:hover .practice__list{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =-=================== */
+
 .warper-avatar__list{
   margin: 50px auto;
   text-align: center;
@@ -193,6 +288,8 @@ h3{
   height: 80px;
   background-color: aqua;
   border-radius: 5px;
+  cursor: pointer;
+
   /* Can giua voi Inline */
   position: relative;
   top: 50%;

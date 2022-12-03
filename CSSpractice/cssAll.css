@@ -1,0 +1,17 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    color: red;
+    font-size: 3.6rem;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 3px rgb(138, 101, 101);
+}
