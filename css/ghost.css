@@ -1,0 +1,170 @@
+:root{
+    --body--color: rgb(23, 20, 20);
+    --eyes--color: rgb(167, 133, 133);
+}
+
+body::-webkit-scrollbar{
+    width: 18px;
+}
+body::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(to bottom, rgba(16, 168, 163, 0.699), rgba(200, 20, 14, 0.849));
+    border: 3px solid black;
+    border-radius: 15px;
+}
+body::-webkit-scrollbar-track{
+    background-color: whitesmoke;
+}
+
+.ghost{
+    margin: 10rem 40rem ;
+    width: 20rem;
+    height: 25rem;
+    background-color: var(--body--color);
+    border-radius: 100rem 100rem 0 0;
+    position: relative;
+    transition: all 2.5s linear;
+    animation: hands 2.5s cubic-bezier(0.215, 0.610, 0.355, 1) alternate infinite;
+   box-shadow: 0 0 20px 5px black;
+}
+@keyframes hands{
+    from{
+        transform:translateY(10rem); 
+    }
+    to{
+        transform: translateY(-5rem);
+    }
+}
+.ghost::before{
+    content: "";
+    background-image: linear-gradient(to bottom, gold 90%,rgb(109, 117, 19) 95%);
+    width: 12rem;
+    height: 12rem;
+    z-index: 2;
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 14%, 63% 71%, 90% 0, 75% 100%, 25% 100%, 10% 0, 37% 71%);
+    animation: rotateHat 5s infinite linear;
+}
+
+@keyframes rotateHat{
+    to{
+        background-image: linear-gradient(to bottom, rgb(12, 12, 12) 90%,rgb(222, 250, 4) 95%);
+    }
+}
+
+.ghost::after{
+    content: "";
+    width: 1rem;
+    height: 1.5rem;
+    background-color: rgb(255, 0, 0);
+    border-radius: 100%;
+
+    position: absolute;
+    top: -48px;
+    left: 95px;
+    z-index: 5;
+    box-shadow: 9px 9px 0 0 rgb(8, 0, 255), -9px 9px 0 0 rgb(148, 12, 110);
+}
+
+.eyes{
+    width: 2.5rem;
+    height: 3rem;
+    background-color: var(--eyes--color);
+    position: absolute;
+    top: 7rem;
+    left: 5.2rem;
+    border-radius: 50%;
+    box-shadow: 7.5rem 0 0 0 var(--eyes--color);
+}
+
+.emotion{
+    width: 3.5rem;
+    height: 2rem;
+    background-image: linear-gradient(to left, rgb(222, 108, 108) 10%, rgb(164, 37, 37) 90%);
+
+    border-radius: 100%;
+    opacity: .5;
+
+    position: absolute;
+    top: 10.5rem;
+    left: 2rem;
+    z-index: 2;
+}
+
+.emotion2{
+    width: 3.5rem;
+    height: 2rem;
+    background-image: linear-gradient(to left, rgb(222, 108, 108) 10%, rgb(164, 37, 37) 90%);
+    border-radius: 100%;
+    opacity: .5;
+    position: absolute;
+    top: 10.5rem;
+    left: 15rem;
+    z-index: 2;
+}
+
+.mouth{
+    width: 8rem;
+    height: 4rem;
+    background-color: aqua;
+    position: absolute;
+    top: 13.5rem;
+    left: 6.2rem;
+    border-radius: 0 0 100rem 100rem;
+}
+.hand-right{
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--body--color);
+    position: absolute;
+    top:13rem;
+    left: -4rem;
+    border-radius: 1rem 0  0 1rem;
+    transform: rotate(45deg);
+}
+.hand-left{
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--body--color);
+    position: absolute;
+    top:13rem;
+    left: 18rem;
+    border-radius: 1rem 0  0 1rem;
+    transform: rotate(135deg);
+   
+}
+.body{
+    width: 6rem;
+    height: 5rem;
+    background-image: linear-gradient(to bottom, red 40%,green 95%);
+    position: absolute;
+    top: 18.2rem;
+    clip-path: polygon(
+        50% 0,
+        60% 40%,
+        100% 40%,
+        70% 60%,
+        80% 100%,
+        50% 75%,
+        20% 100%,
+        30% 60%,
+        0% 40%,
+        40% 40%
+        );
+    left: 50%;
+    transform: translateX(-50%);
+}
+.legs{
+    width: 4rem;
+    height: 3rem;
+    background-color: var(--body--color);
+    border-radius: 0 0 100rem 100rem;
+    position: absolute;
+    bottom: -3rem;
+    box-shadow: 4rem 0 0 0 var(--body--color),8rem 0 0 0 var(--body--color),12rem 0 0 0 var(--body--color),16rem 0 0 0 var(--body--color);    
+}
+
+
+
