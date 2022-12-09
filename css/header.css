@@ -1,0 +1,136 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.header_wrapper{
+    width: 100%;
+    height: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_bar{
+    width: 80%;
+    height: 100%;
+    background-color: rgba(169, 52, 52, 0.274);
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo{
+    background-image: url(https://www.hackmath.net/img/92/snehuliak.jpg);
+    width: 6.8rem;
+    height: 6.8rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-left: 3rem;
+}
+
+.header_menu{
+    height: 100%;
+    width: 50%;
+    /* background-color: aqua; */
+    margin-right: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* flex-grow: 1;
+    flex-shrink: 0; */
+}
+
+.menu_item{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    font-size: 2rem;
+    /* border: 1px solid red; */
+}
+.menu_item i{
+    margin-left: .5rem;
+    font-size: 1.5rem;
+    color: rebeccapurple;
+}
+.menu_item .fa-chevron-circle-down{
+    display: none;
+}
+.menu_item a{
+    text-decoration: none;
+    color: black;
+}
+.menu_item a::first-letter{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+.menu_item:hover a{
+    opacity: .8;
+    color: rgb(45, 12, 145);
+}
+.menu_item:hover .fa-chevron-circle-down{
+    display: block;
+  
+}
+.menu_item:hover .fa-circle-chevron-up{
+    display: none;
+}
+
+.navbar_child{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: rgba(0, 255, 255, 0.42);
+    border-radius: 1rem;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s linear;
+}
+.list_item{
+    list-style: none;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.list_item h3{
+    width: 100%;
+    color: rgb(37, 181, 8);
+    font-size: 3.2rem;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+.item{
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    border-top: 1px black solid;
+}
+.list_item li:last-of-type{
+    border-bottom: 1px black solid;
+}
+.menu_item:hover .navbar_child{
+  opacity: 1;
+  visibility: visible;
+}

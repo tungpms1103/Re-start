@@ -189,7 +189,7 @@ h3 {
   left: 0;
   z-index: -1;
   border-radius: 10px;
-  transition: all .8s linear;
+  transition: all .3s linear;
 }
 
 .nav_bar .title_practice p {
@@ -232,7 +232,7 @@ h3 {
 
   opacity: 0;
   visibility: hidden;
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 
 .nav_bar .practice__list::before {
@@ -277,7 +277,7 @@ h3 {
 .img--background .nav_bar:hover .practice__list {
   opacity: 1;
   visibility: visible;
-  animation: list_practice-animation .8s linear;
+  animation: list_practice-animation .3s linear;
 }
 
 @keyframes list_practice-animation {
@@ -320,9 +320,9 @@ h3 {
   box-shadow: 0 0 0 3px white;
 }
 
-.list-avatar .avatar:hover {
+/* .list-avatar .avatar:hover {
   opacity: 0.7;
-}
+} */
 
 .list-avatar .many-avatar {
   box-sizing: content-box;
