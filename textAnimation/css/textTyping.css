@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container
+{   
+    width: 80%;
+    height: 500px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .static_text{
+    color: rgb(21, 20, 17);
+    font-size: 60px;
+
+}
+.container ul{
+    margin-left: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+.container ul li{
+    list-style: none;
+    position: relative;
+    top: 0;
+    line-height: 100px;
+    font-size: 60px;
+    animation: slide_up 15s steps(5) infinite;
+    /* change_Text 3s steps(5) infinite */
+
+    
+}
+.container ul li::first-letter{
+    text-transform: uppercase;
+}
+
+@keyframes slide_up{
+    100%{
+        transform: translateY(-500px);
+    }
+}
+@keyframes change_Text
+{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container ul li span{
+    position: relative;  
+    line-height: 100px;
+    background-color: rgb(12, 121, 28);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+
+.container ul li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-left: 5px solid red;
+    animation: typing 3s steps(6) infinite;
+}
+@keyframes typing{
+    30%, 60%{
+    transform: translateX(100px);
+    }
+    100%{
+    transform: translateX(calc(100% + 20px));
+    }
+}

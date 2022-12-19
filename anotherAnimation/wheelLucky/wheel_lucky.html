@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style_wheel.css">
+    <title>Wheel Lucky</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wheel">
+            <div class="item" style="--i:1; --color:rgb(27, 149, 173);"><span>Argentina</span></div>
+            <div class="item" style="--i:2; --color:rgb(31, 12, 158);"><span>France</span></div>
+            <div class="item" style="--i:3; --color:rgb(7, 112, 18);"><span>brazil</span></div>
+            <div class="item" style="--i:4; --color:rgb(127, 190, 25);"><span>
+                    Croatia
+                </span></div>
+            <div class="item" style="--i:5; --color:rgb(19, 176, 13);"><span>england</span></div>
+            <div class="item" style="--i:6; --color:rgb(134, 114, 13);"><span>Uruguay</span></div>
+            <div class="item" style="--i:7; --color:rgb(148, 9, 12);"><span>Japan</span></div>
+            <div class="item" style="--i:8; --color:rgb(28, 2, 26);"><span>Mexico</span></div>
+            <div class="item" style="--i:9; --color:rgb(61, 17, 105);"><span>Wales</span></div>
+        </div>
+        <div class="spin">
+            <span>spin</span>
+        </div>
+    </div>
+    <script>
+        let wheel = document.querySelector('.wheel')
+        let button = document.querySelector('.spin')
+        let value = Math.ceil(Math.random() * 3600);
+
+        button.onclick = function () {
+
+            wheel.style.transform = "rotate(" + value + "deg)";
+
+            value += Math.ceil(Math.random() * 3600);
+        }
+    </script>
+</body>
+
+</html>

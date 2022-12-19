@@ -1,0 +1,88 @@
+html{
+    font-size: 62.5%;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container
+{   font-size: 2rem;
+    width: 60%;
+    height: 50rem;
+    margin: 10rem auto;
+    border: 1px solid red;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .wheel
+{   --size: 30vw;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid  green;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    transition: transform 5s ease-in-out;
+    box-shadow: 0 0 0 10px rgb(201, 163, 12);
+}
+.wheel .item{
+    width: 50%;
+    height: 50%;
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    background-color: var(--color);
+    transform-origin: bottom right;
+    transform: rotate(calc(40deg * var(--i)));
+    clip-path: polygon(0 0, 50% 0, 100% 100%, 1% 56%);
+}
+.wheel .item span{
+    --text-size: 1.5vw;
+    font-size: var(--text-size);
+    /* transform: rotate(calc(-40deg * var(--i))); */
+    transform: rotate(40deg);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.container .spin{
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgb(38, 225, 25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.container .spin::before{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 5rem;
+    background-color: inherit;
+    top: -4.6rem;
+    clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+}
+
+.container .spin span{
+    text-transform: uppercase;
+    --text-size: 1.3vw;
+    font-size: var(--text-size);
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 500;
+}

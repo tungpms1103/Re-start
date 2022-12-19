@@ -1,0 +1,104 @@
+
+.border_animation{
+    --border: 1.5rem;
+
+    margin: 25rem auto;
+    width: 30rem;
+    height: 40rem;
+    background-color: aqua;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+
+    box-shadow: 0 0 15px 5px rgb(52, 160, 9);
+}
+.border_animation::before{
+    content: "";
+    width: 150%;
+    height: 150%;
+    background-image: conic-gradient(
+    rgb(189, 33, 181) 20deg,
+     transparent 120deg);
+    /* border-radius: 50%; */
+    position: absolute;
+    transition: all 1.5s linear;
+    animation: border_animation 1.5s linear infinite;
+    /* z-index: 2; */
+}
+
+@keyframes border_animation{
+    0%{
+        transform: rotate(0deg);
+        /* filter: hue-rotate(0deg); */
+    }
+    100%{
+        transform: rotate(-360deg);    
+        /* filter: hue-rotate(360deg); */
+
+    }
+}
+.border_animation:hover{
+    box-shadow: 0 0 50px 0 rgb(149, 6, 6);
+}
+.border_animation .content{
+    width: calc(100% - var(--border));
+    height: calc(100% - var(--border));
+    background-color: rgb(28, 28, 26);
+    margin: calc(var(--border) / 2);
+    position: absolute;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   
+    animation: background_animation 2s infinite linear;
+}
+.border_animation .content p{
+    color: white;
+    font-size: 2.8rem;
+    text-shadow: 0 0 10px whitesmoke;
+}
+.content p::first-letter{
+   font-size: 3.6rem;
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+   background-image: conic-gradient(rgb(255, 0, 0) 20deg,green 120deg
+   , yellow 180deg);
+   text-shadow:0 0 10px rgb(117, 152, 30);
+}
+
+@keyframes background_animation{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+.content i{
+    color: red;
+    font-size: 3rem;
+    position: absolute;
+    margin: 0 0 6.8rem -18rem;
+}
+.content::after{
+    content: '';
+    font-size: 2rem;
+    width: 30rem;
+    height: 2rem;
+    background-color: rgb(4, 95, 120);
+    position: absolute;
+    top: 0;
+    left: -5rem;
+
+    transform: rotate(-45deg);
+    transition: all 3s linear;
+    animation: background_animation 3s infinite linear;
+
+}
