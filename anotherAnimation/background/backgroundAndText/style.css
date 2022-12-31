@@ -1,0 +1,36 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: #3c2f2f;
+    overflow: hidden;
+    text-align: center;
+}
+.container p
+{   
+    display: inline-block;
+    position: relative;
+    max-width: 80%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    line-height: .7em;
+    font-weight: 900;
+    background-image: url('./tony2.png'),url('./tony2.png'),url('./tony2.png');
+    font-size: 24px;
+    user-select: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    /* background-blend-mode: color-dodge; */
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

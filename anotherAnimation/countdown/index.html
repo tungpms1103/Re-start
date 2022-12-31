@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Hello 2023</title>
+</head>
+
+<body>
+
+    <div class="time_countdown">
+        <div class="circle" style="--color: #fff">
+            <div class="dot days_dot"></div>
+            <svg>
+                <circle cx="100" cy="100" r="80"></circle>
+                <circle cx="100" cy="100" r="80" id="days"></circle>
+            </svg>
+            <div class="days">00
+                <br> <span>days</span>
+            </div>
+        </div>
+
+        <div class="circle" style="--color: #0ea4a4">
+            <div class="dot hours_dot"></div>
+            <svg>
+                <circle cx="100" cy="100" r="80"></circle>
+                <circle cx="100" cy="100" r="80" id="hours"></circle>
+            </svg>
+            <div class="hours">00
+                <br> <span>hours</span>
+            </div>
+        </div>
+
+        <div class="circle" style="--color: #d3640f">
+            <div class="dot minutes_dot"></div>
+            <svg>
+                <circle cx="100" cy="100" r="80"></circle>
+                <circle cx="100" cy="100" r="80" id="minutes"></circle>
+            </svg>
+            <div class="minutes">00
+                <br> <span>minutes</span>
+            </div>
+        </div>
+
+        <div class="circle" style="--color: #14b705">
+            <div class="dot seconds_dot"></div>
+            <svg>
+                <circle cx="100" cy="100" r="80"></circle>
+                <circle cx="100" cy="100" r="80" id="seconds"></circle>
+            </svg>
+            <div class="seconds">00
+                <br> <span>seconds</span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="congratulations">
+        <p>happy new year 2023</p>
+    </div>
+    <!-- <div class="test_aspect_ratio">
+        <img src="https://m5.gs/QUpJb0" alt="">
+    </div> -->
+
+    <script>
+        let time = document.querySelector('.time_countdown');
+        let congra = document.querySelector('.congratulations');
+
+        let days = document.querySelector('.days');
+        let hours = document.querySelector('.hours');
+        let minutes = document.querySelector('.minutes');
+        let seconds = document.querySelector('.seconds');
+
+        let day_dot = document.querySelector('.days_dot');
+        let hours_dot = document.querySelector('.hours_dot');
+        let minute_dot = document.querySelector('.minutes_dot');
+        let second_dot = document.querySelector('.seconds_dot');
+
+        // Circle
+        let day_circle = document.querySelector('#days');
+        let hour_circle = document.querySelector('#hours');
+        let minute_circle = document.querySelector('#minutes');
+        let second_circle = document.querySelector('#seconds');
+
+        let endDate = '01/01/2023 00:00:00';
+
+        let x = setInterval(
+            function () {
+                let now = new Date().getTime();
+                let ends = new Date(endDate).getTime();
+                // let countdown = ends - now;
+                let countdown = 0;
+
+                let days_count = Math.floor(
+                    countdown / (1000 * 60 * 60 * 24));
+                let hours_count = Math.floor(
+                    countdown % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+                let minutes_count = Math.floor(
+                    countdown % (1000 * 60 * 60) / (1000 * 60));
+                let seconds_count = Math.floor(
+                    countdown % (1000 * 60) / (1000));
+
+                // let hours_count = Math.floor(
+                //     countdown / (1000 * 60 * 60) -
+                //     days_count * 24);
+                // let minutes_count = Math.floor(
+                //     countdown / (1000 * 60)
+                //     - days_count * 24 * 60 - hours_count * 60);
+                // let seconds_count = Math.floor(
+                //     countdown / (1000) - days_count * 24 * 60 * 60 - hours_count * 60 * 60 - minutes_count * 60);
+
+                days.innerHTML = days_count +
+                    "<br> <span>days</span>";
+                hours.innerHTML = hours_count +
+                    "<br> <span>hours</span>";
+                minutes.innerHTML = minutes_count +
+                    "<br> <span>minutes</span>";
+                seconds.innerHTML = seconds_count +
+                    "<br> <span>seconds</span>";
+
+                // Dots and Circle Animation
+                //  Calculate  stroke-dashoffset
+                let day_circle_dashoffset = 503 - (days_count * 503) / 365;
+                // 365day / year
+                let hour_circle_dashoffset = 503 - (hours_count * 503) / 24;
+                // 24h / day
+                let minute_circle_dashoffset = 503 - (minutes_count * 503) / 60;
+                // 60m / h
+                let second_circle_dashoffset = 503 - (seconds_count * 503) / 60;
+
+
+                day_circle.style.strokeDashoffset = day_circle_dashoffset;
+                hour_circle.style.strokeDashoffset = hour_circle_dashoffset;
+                minute_circle.style.strokeDashoffset = minute_circle_dashoffset
+                second_circle.style.strokeDashoffset = second_circle_dashoffset;
+
+                let day_dot_deg = days_count * (360 / 365);
+                let hour_dot_deg = hours_count * (360 / 24);
+                let minute_dot_deg = minutes_count * (360 / 60);
+                let second_dot_deg = seconds_count * (360 / 60);
+                day_dot.style.transform = `rotateZ(${day_dot_deg}deg)`;
+                hours_dot.style.transform = `rotateZ(${hour_dot_deg}deg)`;
+                minute_dot.style.transform = `rotateZ(${minute_dot_deg}deg)`;
+                second_dot.style.transform = `rotateZ(${second_dot_deg}deg)`;
+
+                if (countdown <= 0) {
+                    // console.log(time);
+                    time.style.display = 'none';
+                    congra.style.display = 'block';
+                    document.body.style.backgroundColor = "#f6f3f3";
+                }
+            }
+        )
+        // console.log(countdown + " ---- " + now);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.caro_background
+{   
+    --size-square : 24;
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    flex-wrap: wrap; */
+
+    display: grid;
+    grid-template-columns: repeat(var(--size-square),1fr);
+    grid-template-rows: repeat(var(--size-square),1fr);
+
+    background-color: black;
+    overflow: hidden;
+
+    /* row-gap: 2px;
+    column-gap: 2px; */
+    gap: 2px;
+    position: relative;
+}
+
+.caro_background::before
+{
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom,
+    black,rgb(198, 204, 10), red, black);
+    z-index: 1;
+    animation: 3s change_color linear infinite;
+}
+@keyframes change_color
+{
+    from
+    {
+        filter: hue-rotate(0deg);
+        transform: translateY(-100%);
+    }
+    to
+    {
+        filter: hue-rotate(90deg);
+        transform: translateY(100%);
+    }
+}
+
+.caro_background span
+{     
+    position: relative;
+    width: calc( (100vw - calc(var(--size-square)*2px)) / var(--size-square) );
+    height: calc( (100vw - calc(var(--size-square)*2px)) / var(--size-square) );
+
+    /* width: calc(100vw / var(--size-square));
+    height: calc(100vw / var(--size-square)); */
+    user-select: none;
+    background-color: rgb(28, 32, 27);
+    z-index: 2;
+    transition: all 1.5s;
+    /* border: 1px red transparent; */
+}
+
+.caro_background span:hover
+{
+    background-color: rgba(13, 204, 13, 0.849);
+    transition: 0s;
+    animation: color 2s infinite linear;
+}
+@keyframes color
+{
+    from
+    {
+        filter: hue-rotate(0deg);
+    }
+    to
+    {
+        filter: hue-rotate(360deg);
+    }
+}
+@media (max-width: 1200px)
+{
+    .caro_background 
+    {    
+        --size-square:16;
+    }
+}
+@media (max-width: 900px)
+{
+    .caro_background 
+    {    
+    --size-square:12;
+    }
+}
+@media  (max-width: 600px)
+{
+    .caro_background 
+    {    
+        --size-square:8;
+    }
+}

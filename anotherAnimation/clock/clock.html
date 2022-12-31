@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./clock_style.css">
+    <title>Clock</title>
+</head>
+
+<body>
+    <audio autoplay preload="auto" loop>
+        <source src="../audio/Tieng-dong-ho-tich-tac-www_tiengdong_com.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="clock">
+        <div class="number " style="--i:1">
+            <span>|</span>
+        </div>
+        <div class="number" style="--i:2"><span>|</span></div>
+        <div class="number" title="primary" style="--i:3">
+            <span>3</span>
+        </div>
+        <div class="number" style="--i:4"><span>|</span></div>
+        <div class="number" style="--i:5"><span>|</span></div>
+        <div class="number" style="--i:6"><span>6</span></div>
+        <div class="number" style="--i:7"><span>|</span></div>
+        <div class="number" style="--i:8"><span>|</span></div>
+        <div class="number" style="--i:9"><span>9</span></div>
+        <div class="number" style="--i:10"><span>|</span></div>
+        <div class="number" style="--i:11"><span>|</span></div>
+        <div class="number" style="--i:12"><span>12</span></div>
+
+        <!-- Kim dong ho -->
+        <div class="hours">
+            <div id="hh"></div>
+        </div>
+        <div class="minutes">
+            <div id="mm"></div>
+        </div>
+        <div class="seconds">
+            <div id="ss"></div>
+        </div>
+    </div>
+
+
+    <script>
+        const hours = document.querySelector('#hh');
+        const minutes = document.querySelector('#mm');
+        const seconds = document.querySelector('#ss');
+
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours();
+            let mm = day.getMinutes();
+            let ss = day.getSeconds();
+
+            // let hh = 23;
+            // let mm = 0;
+
+            if (mm == 60 || mm == 0) {
+                changeBackground(hh);
+            }
+
+            if (hh > 12) {
+                hh = hh - 12;
+            }
+
+            hours.style.transform = `rotateZ(${hh * 30 + (mm * 30 / 60)}deg`;
+            minutes.style.transform = `rotateZ(${mm * 6}deg)`
+            seconds.style.transform = `rotateZ(${ss * 6}deg)`
+
+        })
+
+        function changeBackground(hh) {
+            if (hh >= 19) {
+                document.body.style.backgroundColor = "#000";
+            }
+            else {
+                document.body.style.backgroundColor = "#fff";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
