@@ -3,19 +3,20 @@
     margin: 0;
     box-sizing: border-box;
 }
-body
+.container
 {
     background-color: rgb(62, 60, 60);
-   transition: all 2s linear;
+    transition: all 2s linear;
 }
 .time_countdown
-{
+{   position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
+    z-index: 9;
 }
 .time_countdown .circle
 {
@@ -138,6 +139,7 @@ body
     background-clip: text;
     animation: changeColor 3s alternate infinite;
    transition: all 2s linear;
+   z-index: 9;
 
 }
 .congratulations p
