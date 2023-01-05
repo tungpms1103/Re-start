@@ -12,6 +12,8 @@
     flex-wrap: wrap; */
 
     display: grid;
+    /* grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr)); */
     grid-template-columns: repeat(var(--size-square),1fr);
     grid-template-rows: repeat(var(--size-square),1fr);
 
@@ -81,21 +83,21 @@
         filter: hue-rotate(360deg);
     }
 }
-@media (max-width: 1200px)
+@media screen and (max-width: 1200px)
 {
     .caro_background 
     {    
         --size-square:16;
     }
 }
-@media (max-width: 900px)
+@media screen and (max-width: 900px)
 {
     .caro_background 
     {    
     --size-square:12;
     }
 }
-@media  (max-width: 600px)
+@media screen and (max-width: 600px)
 {
     .caro_background 
     {    

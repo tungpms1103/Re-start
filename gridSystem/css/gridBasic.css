@@ -6,19 +6,18 @@
 
 .layout
 {   
+    --row-gap: 20px;
     width: calc(100% - 40px);
-    height: 100vh;
-    margin: 20px auto;
-
+    max-height: 100%;
+    margin: 0px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-template-rows: 500px 200px 500px;
-    column-gap: 40px;
-    row-gap: 40px;
+    grid-template-rows: calc(500vh / 12 - var(--row-gap)*2/3) calc(200vh / 12 - var(--row-gap)*2/3) calc(500vh / 12 - var(--row-gap)*2/3);
+    column-gap: 20px;
+    row-gap:var(--row-gap);
 }
 .layout .layout_item {
-    width: 100%;
-    height: 100%;
+   
     border: 3px rgb(16, 196, 10) solid;
     border-radius: 20px;
     overflow: hidden;
@@ -47,4 +46,175 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/*============== Use Grid-template-Area ===============*/
+
+
+.layout-post
+{
+    margin: 150px auto;
+    height: 100%;
+    /* width: 100vw; */
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "h1 h2 h3"
+    "h1 h4 h5";
+    gap: 20px;
+    padding: 15px;
+    /* overflow: hidden; */
+}
+
+.layout-post .post-item:first-child
+{
+    grid-area: h1;
+}
+.layout-post .post-item:nth-child(2)
+{
+    grid-area: h2;
+}
+.layout-post .post-item:nth-child(3)
+{
+    grid-area: h3;
+}
+.layout-post .post-item:nth-child(4)
+{
+    grid-area: h4;
+}
+.layout-post .post-item:last-child
+{
+    grid-area: h5;
+}
+
+.layout-post .post-item
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.layout-post .post-item .post-item-image
+{
+    object-fit: cover;
+    width: 100%;
+    height: 175px;
+    border-radius: 25px;
+    flex-shrink: 0;
+    transition: all 2s;
+}
+.layout-post .post-item .img-large
+{
+    flex-grow: 1;
+}
+.layout-post .post-item .img-large
+{
+    height: auto;
+}
+.layout-post .post-item-content
+{   
+    width: 100%;
+    background-color:#fff;
+    /* flex: 1; */
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(207, 200, 200, 0.413);
+    border-radius: 5px;
+}
+.post-item-content h2
+{
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+    width: 100%; */
+
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+.post-item-content p
+{
+    width: 98%;
+    margin: 0 auto;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.layout-post .post-item .post-item-image:hover
+{
+    perspective: 500px;
+    transform-style: preserve-3d;
+    /* transform: rotateX(calc(360deg * 8)); */
+    -webkit-box-reflect: 1px;
+}
+
+
+
+/* ====== Scroll snap responsive =======  */
+
+.images
+{   
+    margin: 200px auto;
+    /* padding: 25px; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    background-color: aqua;
+    overflow: hidden;
+
+}
+
+.images .image-item img
+{   
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    user-select: none;
+}
+
+@media screen and (max-width: 900px) {
+    .images
+    {   
+        background-color: unset;
+        grid-template-columns: unset;
+        width: 100%;
+        gap: 10px;
+        grid-auto-flow: column;
+        grid-auto-columns: 90%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .images::-webkit-scrollbar
+    {
+        display: none;
+    }
+    .images .image-item
+    {
+        padding: 15px;
+        scroll-snap-align: start;
+    }
+    .images .image-item img
+    {
+        border-radius: 15px;
+        box-shadow: 0 0 15px #000;
+    }
+    .images h2
+    {
+        display: none;
+    }
 }
