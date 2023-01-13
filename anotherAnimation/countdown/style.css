@@ -3,15 +3,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 .container
 {
     background-color: rgb(62, 60, 60);
     transition: all 2s linear;
+    position: relative;
+    width: 100%;
+    height: 100%;
+   
 }
 .time_countdown
 {   position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,14 +144,56 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: linear-gradient(to top, red,green,yellow,blue,orange);
+    background-image: linear-gradient(to top, rgb(171, 193, 25),rgb(8, 240, 8));
     -webkit-background-clip: text;
     background-clip: text;
     animation: changeColor 3s alternate infinite;
-   transition: all 2s linear;
-   z-index: 9;
+    transition: all 2s linear;
+    z-index: 1;
 
 }
+.container .list_img
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.list_img .cat-happyNY
+{ 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 30px;
+    z-index: 3;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+.list_img .hoamai-happyNY
+{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    right: -8px;
+    z-index: 3;
+    object-fit: cover;
+    transform: rotateZ(115deg);
+
+}
+.list_img .hoadao-happyNY
+{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: -35px;
+    left: 8px;
+    z-index: 3;
+    object-fit: contain;
+    transform: rotateY(180deg) rotateX(180deg);
+}
+
 .congratulations p
 {
     color: transparent;
@@ -150,6 +202,7 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
+    user-select: none;
 }
 @keyframes changeColor
 {
@@ -185,12 +238,49 @@
     }
 }
 
+
+
 @media (max-width: 600px) {
+    body{
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background-color: aqua;
+    }
+    .container
+    {
+        width: 100vw;
+        height: 105vh;
+        margin-top: -20px;
+        overflow: hidden;
+    }
     .congratulations p
     {
         font-size: 5rem;
     }
     .time_countdown{
         flex-wrap: wrap;
+    }
+    .list_img .cat-happyNY, .list_img .hoamai-happyNY
+    {
+        width: 100px;
+        height: 100px;
+    }
+    .list_img .cat-happyNY
+    {
+        top: 20px;
+        left: 5px;
+    }
+    .list_img .hoamai-happyNY
+    {
+        top: 20px;
+        right: 5px;
+    }
+    .list_img .hoadao-happyNY
+    {
+        width: 200px;
+        height: 200px;
+        right: 20px;
+        bottom: 15px;
     }
 }

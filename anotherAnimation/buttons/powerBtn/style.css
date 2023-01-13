@@ -1,0 +1,120 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(191, 194, 194);
+}
+
+.powerBtn
+{
+  width: 280px;
+  height: 120px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.powerBtn #checkBox_power_btn
+{
+  appearance: none;
+}
+
+.powerBtn::before
+{
+  content: "";
+  width: 80%;
+  height: 10px;
+  background-color: bisque;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 5px;
+}
+
+
+.powerBtn .box_Btn
+{ 
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(#dbdae1, #a3aaba);
+  border-radius: 5px;
+  transition: all 1s;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+  15px 15px 15px rgba(0, 0, 0, 0.1),
+  25px 25px 15px rgba(0, 0, 0, 0.1),
+  35px 35px 15px rgba(0, 0, 0, 0.1),
+  45px 45px 15px rgba(0, 0, 0, 0.1);
+}
+.powerBtn .box_Btn::before
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(#fff,#fff,#e3e3e3);
+  z-index: 1;
+  border-radius: 5px 0 0 5px;
+
+}
+.powerBtn .box_Btn::after
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(#dbdae1, #a3aaba,#ffff);
+  border-radius: 0 5px 5px 0;
+
+  z-index: 1;
+}
+.box_Btn 
+{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.box_Btn ion-icon
+{
+  font-size: 40px;
+  transition: all 1s;
+  --ionicon-stroke-width: 36px;
+}
+#checkBox_power_btn:checked ~ .box_Btn
+{
+  transform: translateX(150px);
+}
+#checkBox_power_btn:checked ~ .box_Btn ion-icon
+{
+  color: #00ffe2;
+  filter: drop-shadow(0 0 5px #00ffe2)
+  drop-shadow(0 0 15px #00ffe2)
+  drop-shadow(0 0 20px #00ffe2);
+}
+

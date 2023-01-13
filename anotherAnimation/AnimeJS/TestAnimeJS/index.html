@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Test Anime</title>
+</head>
+
+<body>
+    <div class="container_battery">
+    </div>
+
+    <div class="test_2">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <div class="btn_test2">
+            <div class="btn btn_play">Play</div>
+            <div class="btn btn_pause">Pause</div>
+        </div>
+    </div>
+
+
+    <script src="./anime.min.js"></script>
+    <script>
+        // var logEl = document.querySelector('.container_battery');
+
+        // var battery = {
+        //     charged: '0%',
+        //     cycles: 120
+        // }
+        // anime({
+        //     targets: battery,
+        //     charged: '200%',
+        //     cycles: 130,
+        //     round: 1,
+        //     easing: 'linear',
+        //     update: function () {
+        //         logEl.innerHTML = JSON.stringify(battery);
+        //     }
+        // });
+
+        var test2 = document.querySelector('.test_2');
+
+        var animation = anime({
+            targets: '.test_2 span',
+            scale: [
+                { value: .1, easing: 'easeOutSine', duration: 500 },
+                { value: 1, easing: 'easeInOutQuad', duration: 1200 }
+            ],
+            delay: anime.stagger(200, { grid: [14, 5], from: 'center' }),
+            direction: 'alternate',
+            loop: true,
+            autoplay: false
+        });
+
+        document.querySelector('.btn_play').onclick = animation.play;
+        document.querySelector('.btn_pause').onclick = animation.pause;
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -57,6 +57,12 @@
             </div>
         </div>
 
+        <div class="list_img">
+            <img src="./meo.png" alt="" class="cat-happyNY">
+            <img src="./hoa_mai.png" alt="" class="hoamai-happyNY">
+            <img src="./hoa_dao.png" alt="" class="hoadao-happyNY">
+        </div>
+
         <div class="congratulations">
             <audio id="firework" src="../audio/Tieng-phao-hoa-no-tren-bau-troi-www_tiengdong_com.mp3"></audio>
             <p>happy new year 2023</p>
@@ -97,14 +103,14 @@
         let minute_circle = document.querySelector('#minutes');
         let second_circle = document.querySelector('#seconds');
 
-        let endDate = '01/01/2023 00:00:00';
+        let endDate = '01/22/2023 00:00:00';
 
         let x = setInterval(
             function () {
                 let now = new Date().getTime();
                 let ends = new Date(endDate).getTime();
-                let countdown = ends - now;
-                // let countdown = 0;
+                // let countdown = ends - now;
+                let countdown = 0;
 
                 let days_count = Math.floor(
                     countdown / (1000 * 60 * 60 * 24));
@@ -166,7 +172,9 @@
                 if (countdown <= 0) {
                     // console.log(time);
                     time.style.display = 'none';
-                    congra.style.display = 'block';
+                    congra.style.display = 'inline-block';
+                    document.querySelector('.list_img').style.display = 'block';
+
                     container.style.backgroundColor = "#f6f3f3";
                     // firework.play();
                     // firework.volume = 0.1;
