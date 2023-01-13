@@ -34,6 +34,7 @@ body{
     height: 200px;
     /* border-radius: 50%; */
     position: relative;
+
 }
 .circle svg{
     width: 200px;
@@ -251,8 +252,13 @@ body{
     {
         width: 100vw;
         height: 105vh;
-        margin-top: -20px;
         overflow: hidden;
+        margin-top: -20px;
+    }
+    .container .circle
+    {
+        transform: scale(.7);
+        margin-top: -20px;
     }
     .congratulations p
     {
@@ -279,8 +285,8 @@ body{
     .list_img .hoadao-happyNY
     {
         width: 200px;
-        height: 200px;
+        height: 150px;
         right: 20px;
-        bottom: 15px;
+        bottom: 80px;
     }
 }
